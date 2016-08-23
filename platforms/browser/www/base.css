@@ -119,6 +119,7 @@ body {
 	/*font-weight: 200;*/
 	color: #555;
 	box-sizing: border-box;
+	-webkit-overflow-scrolling: auto;
 }
 
 .ptr-loading #content, .ptr-reset #content,
