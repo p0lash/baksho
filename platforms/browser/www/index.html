@@ -1,0 +1,78 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+ <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/git/jquery.mobile-git.css">
+ <script type="text/javascript" src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+ <script type="text/javascript" src="js/jquery.js"></script>
+ 
+  <script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+	 $.getJSON(url,function(result){
+	 console.log(result);
+	 $.each(result, function(i, field){
+	 var id=field.id;
+	 var title=field.title;
+	 var details=field.details;
+	 var image=field.image;
+	 $("#listview").append("<a class='item' href='form.html?id="+id+"&title="+title+"&details="+details+"&image="+image+"'><span class='blog_image'><img src='"+image+"'></span></a>");
+	 });
+	 });
+	 });
+</script>
+
+
+<script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+	 $.getJSON(url,function(result){
+	 console.log(result);
+	 $.each(result, function(i, field){
+	 var id=field.id;
+	 var title=field.title;
+	 var details=field.details;
+	 var image=field.image;
+	 $("#detailview").append("<a class='item' href='form.html?id="+id+"&title="+title+"&details="+details+"&image="+image+"'><span class='blog_image'><img src='"+image+"'></span><h2>"+ title + " </h2><p>"+ details +"</p></a>");
+	 });
+	 });
+	 });
+</script>
+
+
+</head>
+<body>
+ 
+ 	<div id="head">
+ 		<span>BakSho</span>
+ 	</div>
+
+ 	<div id="listview">
+ 	</div>
+
+ 	<ul>
+ 		<li><div id="card2"></div></li>
+ 		<!-- <li><div id="card3"></div></li> -->
+ 		<li><div id="card4"></div></li>
+ 		<!-- <li><div id="card5"></div></li> -->
+ 		<!-- <li><div id="card6"></div></li> -->
+ 		<li><div id="card7"></div></li>
+ 	</ul>
+
+ 	<ul>
+ 		<!-- <li><div id="card2"></div></li> -->
+ 		<li><div id="card3"></div></li>
+ 		<!-- <li><div id="card4"></div></li> -->
+ 		<li><div id="card5"></div></li>
+ 		<li><div id="card6"></div></li>
+ 		<!-- <li><div id="card7"></div></li> -->
+ 	</ul>
+
+ 	
+
+ 	
+
+
+</body>
+</html>

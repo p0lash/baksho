@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "109452864796",
+    "firebase_url": "https://sticker-140610.firebaseio.com",
+    "project_id": "sticker-140610",
+    "storage_bucket": "sticker-140610.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109452864796:android:06e18216b4121cc0",
+        "android_client_info": {
+          "package_name": "com.phonegap.sticker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109452864796-982dop7id8sjmrlns3mh35cc5nbpjm7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwWkVIxzUSyzdx6S0ZAjfLeGEa86l-1k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
