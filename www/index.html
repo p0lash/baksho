@@ -7,23 +7,66 @@
  <link rel="stylesheet" href="lib/genericons/genericons.css">
  <link rel="stylesheet" href="base.css">
 
-<!-- <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"> -->
+<meta name="viewport" content="width=400, initial-scale=1">
 
  
-  <script type="text/javascript">
+<script type="text/javascript">
 	 $(document).ready(function()
 	 {
 	 var url="http://magnitolab.com/baksho/json.php";
-	 $.getJSON(url,function(result){
-	 console.log(result);
-	 $.each(result, function(i, field){
-	 var id=field.id;
-	 var title=field.title;
-	 var details=field.details;
-	 var image=field.image;
-	 $("#listview").append("<a href='article_detail.html'><span class='blog_image'><img src='"+image+"'></span></a>");
+
+		 $.getJSON(url,function(result){
+		 	console.log(result);
+		 	$.each(result, function(i, field){
+		 		var image=field.image;
+
+		 		if (field.id === "1"){
+		 			$("#listview").append("<a href='article_detail.html'><span class='blog_image'><img src='"+image+"'></span></a>");
+		 		} 
+
+		 		
+		 	});
+		 });
 	 });
+</script>
+
+<script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+
+		 $.getJSON(url,function(result){
+		 	console.log(result);
+		 	$.each(result, function(i, field){
+		 		var image=field.image;
+
+		 		if (field.id === "2"){
+		 			$("#card2").append("<a href='article_detail.html'><span><img style='width:100%' src='"+image+"'></span></a>");
+		 		} 
+
+		 		
+		 	});
+		 });
 	 });
+</script>
+
+<script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+
+		 $.getJSON(url,function(result){
+		 	console.log(result);
+		 	$.each(result, function(i, field){
+		 		var image=field.image;
+
+		 		if (field.id === "3"){
+		 			$("#card3").append("<a href='article_detail.html'><span><img style='width:100%' src='"+image+"'></span></a>");
+		 		} 
+
+		 		
+		 	});
+		 });
 	 });
 </script>
 
