@@ -15,6 +15,14 @@
 
 <script type="text/javascript" src="js/iscroll.js"></script>
 
+<script>
+    function load()
+    {
+    myScroll.refresh();	
+    // alert("Hola");
+    }
+    </script>
+
 <script type="text/javascript">
 
 var myScroll,
@@ -23,15 +31,6 @@ var myScroll,
 
 function pullDownAction () {
 	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-		var el, li, i;
-		el = document.getElementById('thelist');
-
-		for (i=0; i<3; i++) {
-			li = document.createElement('li');
-			li.innerText = 'Generated row ' + (++generatedCount);
-			el.insertBefore(li, el.childNodes[0]);
-		}
-		
 		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
 	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
 }
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 2
 </head>
 
 
-<body>
+<body onload="loaded()">
 
 <div id="header"><a href="http://cubiq.org/iscroll">Baksho</a></div>
 <div id="wrapper">
