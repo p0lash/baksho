@@ -1,9 +1,6 @@
 <html>
 <head>
  <link rel="stylesheet" type="text/css" href="css/index.css">
- <link rel="stylesheet" type="text/css" href="css/iscroll.css">
- <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/git/jquery.mobile-git.css">
- <script type="text/javascript" src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
  <script type="text/javascript" src="js/jquery.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,78 +9,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 
-
-<script type="text/javascript" src="js/iscroll.js"></script>
-
-<script>
-    function load()
-    {
-    myScroll.refresh();	
-    // alert("Hola");
-    }
-    </script>
-
-<script type="text/javascript">
-
-var myScroll,
-	pullDownEl, pullDownOffset,
-	generatedCount = 0;
-
-function pullDownAction () {
-	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!	
-		location.reload();
-		myScroll.refresh();	// Remember to refresh when contents are loaded (ie: on ajax completion)
-	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
-}
-
-
-function loaded() {
-	pullDownEl = document.getElementById('pullDown');
-	pullDownOffset = pullDownEl.offsetHeight;
-	// pullUpEl = document.getElementById('pullUp');	
-	// pullUpOffset = pullUpEl.offsetHeight;
-	
-	myScroll = new iScroll('wrapper', {
-		useTransition: true,
-		topOffset: pullDownOffset,
-		onRefresh: function () {
-			if (pullDownEl.className.match('loading')) {
-				pullDownEl.className = '';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
-			} 
-			// else if (pullUpEl.className.match('loading')) {
-			// 	pullUpEl.className = '';
-			// 	pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-			// }
-		},
-		onScrollMove: function () {
-			if (this.y > 5 && !pullDownEl.className.match('flip')) {
-				pullDownEl.className = 'flip';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
-				this.minScrollY = 0;
-			} else if (this.y < 5 && pullDownEl.className.match('flip')) {
-				pullDownEl.className = '';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
-				this.minScrollY = -pullDownOffset;
-			} 
-
-		},
-		onScrollEnd: function () {
-			if (pullDownEl.className.match('flip')) {
-				pullDownEl.className = 'loading';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';				
-				pullDownAction();	// Execute custom function (ajax call?)
-			} 
-		}
-	});
-	
-	setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
-}
-
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
-</script>
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 
 
 
@@ -153,45 +81,32 @@ document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 2
 </head>
 
 
-<body onload="loaded()">
+<body>
 
-<div id="header"><a href="http://cubiq.org/iscroll">Baksho</a></div>
-<div id="wrapper">
-	<div id="scroller">
-		<div id="pullDown">
-			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
-		</div>
+<div id="head">Baksho</div>
 
-		<!-- <ul id="thelist">
-			
-		</ul> -->
 
-		<div id="listview">
-		 	</div>
+			<div id="listview"></div>
 
-		 	<ul>
-		 		<li><div id="card2"></div></li>
-		 		<!-- <li><div id="card3"></div></li> -->
-		 		<li><div id="card4"></div></li>
-		 		<!-- <li><div id="card5"></div></li> -->
-		 		<!-- <li><div id="card6"></div></li> -->
-		 		<li><div id="card7"></div></li>
+		 	<ul id="page1">
+		 		<a href="game.html"><li style="background-color: green;">
+		 			GAMES
+		 		</li></a>
+
+		 		<a href=""><li style="background-color: blue;">
+		 			PICTURE
+		 		</li></a>
+
+		 		<a href=""><li style="background-color: purple;">
+		 			MUSIC
+		 		</li></a>
+
+		 		<a href=""><li style="background-color: yellow;">
+		 			VIDEO
+		 		</li></a>
 		 	</ul>
 
-		 	<ul>
-		 		<!-- <li><div id="card2"></div></li> -->
-		 		<li><div id="card3"></div></li>
-		 		<!-- <li><div id="card4"></div></li> -->
-		 		<li><div id="card5"></div></li>
-		 		<li><div id="card6"></div></li>
-		 		<!-- <li><div id="card7"></div></li> -->
-		 	</ul>
-		<!-- <div id="pullUp">
-			<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
-		</div> -->
-	</div>
-</div>
-<!-- <div id="footer"></div> -->
+
 
 </body>
 

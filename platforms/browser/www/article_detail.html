@@ -1,11 +1,7 @@
 <html>
 <head>
  <link rel="stylesheet" type="text/css" href="css/index.css">
- <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/git/jquery.mobile-git.css">
- <script type="text/javascript" src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
  <script type="text/javascript" src="js/jquery.js"></script>
- <link rel="stylesheet" href="lib/genericons/genericons.css">
- <link rel="stylesheet" href="base.css">
  
 
 
@@ -29,20 +25,8 @@
 
 </head>
 <body>
- 
- 	<div id="ptr">
-        <span class="genericon genericon-next"></span>
 
-        <div class="loading">
-        	<span id="l1"></span>
-        	<span id="l2"></span>
-        	<span id="l3"></span>
-        </div>
-    </div>
-
-    <div id="head">
-    	<span>BakSho</span>
-	</div>
+<div id="head">Baksho</div>
 
 
     <!-- <div id="content"> -->
@@ -58,45 +42,6 @@
 
 
 
-
-
-
-
-
-
-
- 	
-<!-- ....................... For Refresh ....................... -->
-
-        <script src="lib/hammer.2.0.4.js"></script>
-        <script src="lib/wptr.1.1.js"></script>
-
-        <script>
-            window.onload = function() {
-                WebPullToRefresh.init( {
-                    loadingFunction: exampleLoadingFunction
-                } );
-            };
-
-            // Just an example loading function that returns a
-            // promise that WebPullToRefresh can use.
-            var exampleLoadingFunction = function() {
-                return new Promise( function( resolve, reject ) {
-                    // Run some async loading code here
-                    // $("#listview").append("<a href='article_detail.html'><span class='blog_image'><img src='"+image+"'></span></a>");
-                    // alert("Hola");
-                    location.reload(); 
-                    if ( true /* if the loading worked */ ) {
-                        resolve();
-                    } else {
-                        reject();
-                    }
-                } );
-            };
-        </script>
-
-
-<!-- ......................... End of Refresh ........................... -->
  	
 
 

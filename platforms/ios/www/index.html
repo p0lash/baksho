@@ -1,65 +1,120 @@
 <html>
 <head>
- <link rel="stylesheet" type="text/css" href="css/ionic.css">
- <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/git/jquery.mobile-git.css">
- <script type="text/javascript" src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+ <link rel="stylesheet" type="text/css" href="css/index.css">
  <script type="text/javascript" src="js/jquery.js"></script>
- <script type="text/javascript">
- $(document).ready(function()
- {
- $("#insert").click(function(){
- var title=$("#title").val();
- var duration=$("#duration").val();
- var price=$("#price").val();
- var dataString="title="+title+"&duration="+duration+"&price="+price+"&insert=";
- if($.trim(title).length>0 & $.trim(duration).length>0 & $.trim(price).length>0)
- {
- $.ajax({
- type: "POST",
- url:"http://magnitolab.com/data_app/insert.php",
- data: dataString,
- crossDomain: true,
- cache: false,
- beforeSend: function(){ $("#insert").val('Connecting...');},
- success: function(data){
- if(data=="success")
- {
- alert("inserted");
- $("#insert").val('submit');
- }
- else if(data=="error")
- {
- alert("error");
- }
- }
- });
- }return false;
- });
- });
- </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+
+
+ 
+<script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+
+		 $.getJSON(url,function(result){
+		 	console.log(result);
+		 	$.each(result, function(i, field){
+		 		var image=field.image;
+
+		 		if (field.id === "1"){
+		 			$("#listview").append("<a href='article_detail.html'><span class='blog_image'><img src='"+image+"'></span></a>");
+		 		} 
+
+		 		
+		 	});
+		 });
+	 });
+</script>
+
+<script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+
+		 $.getJSON(url,function(result){
+		 	console.log(result);
+		 	$.each(result, function(i, field){
+		 		var image=field.image;
+
+		 		if (field.id === "2"){
+		 			$("#card2").append("<a href='article_detail.html'><span><img style='width:100%' src='"+image+"'></span></a>");
+		 		} 
+
+		 		
+		 	});
+		 });
+	 });
+</script>
+
+<script type="text/javascript">
+	 $(document).ready(function()
+	 {
+	 var url="http://magnitolab.com/baksho/json.php";
+
+		 $.getJSON(url,function(result){
+		 	console.log(result);
+		 	$.each(result, function(i, field){
+		 		var image=field.image;
+
+		 		if (field.id === "3"){
+		 			$("#card3").append("<a href='article_detail.html'><span><img style='width:100%' src='"+image+"'></span></a>");
+		 		} 
+
+		 		
+		 	});
+		 });
+	 });
+</script>
+
+
+
 </head>
+
+
 <body>
- <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
- <h1 class="title">Insert Database</h1>
- <a class="button button-clear" href="readjson.html">Read JSON</a>
- </div><br/><br/>
- <div class="list">
- <input type="hidden" id="id" value=""/>
- <div class="item">
- <label>Title</label>
- <input type="text" id="title" value=""/>
- </div>
- <div class="item">
- <label>Duration</label>
- <input type="text" id="duration" value=""/>
- </div>
- <div class="item">
- <label>Price</label>
- <input type="text" id="price" value=""/>
- </div>
- <div class="item">
- <input type="button" id="insert" class="button button-block" value="Insert"/>
- </div>
- </div>
+
+<div id="head">Baksho</div>
+
+
+			<div id="listview"></div>
+
+		 	<ul id="page1">
+		 		<a href="game.html"><li style="background-color: green;">
+		 			GAMES
+		 		</li></a>
+
+		 		<a href=""><li style="background-color: blue;">
+		 			PICTURE
+		 		</li></a>
+
+		 		<a href=""><li style="background-color: purple;">
+		 			MUSIC
+		 		</li></a>
+
+		 		<a href=""><li style="background-color: yellow;">
+		 			VIDEO
+		 		</li></a>
+		 	</ul>
+
+
+
 </body>
+
+
+
+
+
+
+
+
 </html>
